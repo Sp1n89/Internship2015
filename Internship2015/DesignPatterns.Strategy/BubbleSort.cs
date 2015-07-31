@@ -15,7 +15,11 @@ namespace DesignPatterns.Strategy
                 for (var i = 0; i < list.Count - 1; i++)
                 {
                     var result = String.Compare(list[i], list[i + 1], StringComparison.InvariantCulture);
-                    if (result > 0)
+                    // IF strA > strB, THEN -1
+                    // IF strA < strB, THEN 1
+                    // IF strA == strB, THEN 0
+ 
+                    if (result > 0) // list[i] > list[i+1]
                     {
                         var temp = list[i];
                         list[i] = list[i + 1];
