@@ -10,7 +10,7 @@ namespace FrameworkFundamentals.Strings
             #region 1. string.Compare methods examples 
 
             Console.WriteLine("string.Compare methods examples");
-            Console.WriteLine(string.Compare("Boston","Austin", StringComparison.InvariantCulture));   // 1
+            Console.WriteLine(string.Compare("Boston", "Austin", StringComparison.InvariantCulture));  // 1
             Console.WriteLine(string.Compare("Boston", "Boston", StringComparison.InvariantCulture));  // 0
             Console.WriteLine(string.Compare("Boston", "Chicago", StringComparison.InvariantCulture)); // −1
             Console.WriteLine();
