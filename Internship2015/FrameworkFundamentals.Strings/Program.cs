@@ -21,21 +21,25 @@ namespace FrameworkFundamentals.Strings
 
             Console.WriteLine("string.Compare ignore case");
 
-            Console.WriteLine(string.Compare("foo", "FOO", StringComparison.InvariantCultureIgnoreCase)); // 0
-
             Console.WriteLine("ṻ".Equals("ǖ", StringComparison.InvariantCulture));  // True
 
             Console.WriteLine("ṻ".Equals("ǖ", StringComparison.CurrentCulture));    // True (en-US)
 
             Console.WriteLine("ṻ".Equals("ǖ"));                                     // False
+            
+            Console.WriteLine(string.Compare("foo", "FOO", StringComparison.InvariantCultureIgnoreCase)); 
+            // 0
 
+            Console.WriteLine(string.Compare("foo", "FOO", StringComparison.CurrentCulture));            
+            // -1 (Foo > foo)
+            
             Console.WriteLine();
 
             #endregion
 
-            #region 3. plugging in CultureInfo object
+            #region 3. Plugging in CultureInfo object
 
-            Console.WriteLine("plugging in CultureInfo object");
+            Console.WriteLine("Plugging in CultureInfo object");
 
             const string str1 = "change";
             const string str2 = "dollar";
@@ -45,6 +49,7 @@ namespace FrameworkFundamentals.Strings
 
             relation = Symbol(String.Compare(str1, str2, false, new CultureInfo("cs-CZ")));
             Console.WriteLine("For cs-CZ: {0} {1} {2}", str1, relation, str2);
+            Console.WriteLine();
 
             #endregion
 
@@ -82,3 +87,4 @@ namespace FrameworkFundamentals.Strings
         }
     }
 }
+
