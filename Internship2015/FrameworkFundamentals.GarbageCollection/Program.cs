@@ -12,9 +12,10 @@ namespace FrameworkFundamentals.GarbageCollection
 
             const string str = "Hello world!";
             var bytes = Encoding.ASCII.GetBytes(str);
-            Console.WriteLine(bytes.Length);
             var bytesCount = Encoding.ASCII.GetByteCount(str);
-            Console.WriteLine(bytesCount);
+
+            fs.Write(bytes, 0, bytesCount);
+            fs.Dispose();
 
             Console.ReadLine();
         }
