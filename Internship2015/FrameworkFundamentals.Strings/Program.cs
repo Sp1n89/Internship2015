@@ -20,7 +20,15 @@ namespace FrameworkFundamentals.Strings
             #region 2. string.Compare ignore case
 
             Console.WriteLine("string.Compare ignore case");
+
             Console.WriteLine(string.Compare("foo", "FOO", StringComparison.InvariantCultureIgnoreCase)); // 0
+
+            Console.WriteLine("ṻ".Equals("ǖ", StringComparison.InvariantCulture));  // True
+
+            Console.WriteLine("ṻ".Equals("ǖ", StringComparison.CurrentCulture));    // True (en-US)
+
+            Console.WriteLine("ṻ".Equals("ǖ"));                                     // False
+
             Console.WriteLine();
 
             #endregion
@@ -37,6 +45,28 @@ namespace FrameworkFundamentals.Strings
 
             relation = Symbol(String.Compare(str1, str2, false, new CultureInfo("cs-CZ")));
             Console.WriteLine("For cs-CZ: {0} {1} {2}", str1, relation, str2);
+
+            #endregion
+
+            #region 4. Print ASCII chars
+
+            Console.WriteLine("ASCII characters");
+            for (var i = 0; i < 128; i++)
+            {
+                Console.WriteLine("{0} - {1}",i, (char)i);
+            }
+            Console.WriteLine();
+
+            #endregion
+
+            #region 5. Align strings
+
+            Console.WriteLine("Aligning strings");
+            const string composite = "Name={0, -20} Credit Limit={1, 15:C}";
+
+            Console.WriteLine(composite, "Marry", 500);
+            Console.WriteLine(composite, "Elizabeth", 20000);
+            Console.WriteLine();
 
             #endregion
 
