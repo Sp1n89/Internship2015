@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameworkFundamentals.Strin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameworkFundamentals.GarbageCollection", "FrameworkFundamentals.GarbageCollection\FrameworkFundamentals.GarbageCollection.csproj", "{70D2961A-0CA5-4329-A28E-45F16074A7C3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DesignPatterns", "DesignPatterns", "{42A23862-EA8F-4FC2-9EAF-68E6F542CC5B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FrameworkFundamentals", "FrameworkFundamentals", "{353EAAAF-804E-4215-8F93-95AE9F3F40AC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,5 +52,13 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BE22363F-AB55-45C2-9944-D1B958AE8042} = {42A23862-EA8F-4FC2-9EAF-68E6F542CC5B}
+		{5D18E9B2-5A0F-4D0F-9D59-644B7B2BF6F8} = {42A23862-EA8F-4FC2-9EAF-68E6F542CC5B}
+		{67637210-B1C1-4DC0-87E0-B92220539045} = {42A23862-EA8F-4FC2-9EAF-68E6F542CC5B}
+		{7CD1081D-4A67-4757-906D-53E7894FB3BF} = {42A23862-EA8F-4FC2-9EAF-68E6F542CC5B}
+		{2015D18C-D900-436F-BC1A-9574BD566219} = {353EAAAF-804E-4215-8F93-95AE9F3F40AC}
+		{70D2961A-0CA5-4329-A28E-45F16074A7C3} = {353EAAAF-804E-4215-8F93-95AE9F3F40AC}
 	EndGlobalSection
 EndGlobal
