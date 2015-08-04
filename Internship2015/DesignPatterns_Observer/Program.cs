@@ -13,7 +13,7 @@ namespace DesignPatterns.Observer
             subject.Attach(ob1);
             subject.Attach(ob2);
 
-            subject.State = "New blog";
+            subject.State = "UPDATED!!!";
             
             Console.ReadLine();
         }
