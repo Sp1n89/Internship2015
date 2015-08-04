@@ -5,13 +5,16 @@
         public Element Next { get; set; }
         public Element Link { get; set; }
 
+        public string Name { get; set; }
+
         public Element()
         {
             
         }
 
-        public Element(Element next)
+        public Element(string name, Element next)
         {
+            Name = name;
             Next = next;
         }
 

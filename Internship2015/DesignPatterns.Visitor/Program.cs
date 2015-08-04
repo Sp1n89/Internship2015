@@ -8,10 +8,25 @@ namespace DesignPatterns.Visitor
         {
             var client = new Client();
 
-            Console.WriteLine("Count the elements");
-            var visitor = new CountVisitor();
-            visitor.CountElements(client.ObjectStructure);
-            Console.WriteLine("Number of elements is: {0}", visitor.Count);
+            #region Count Visitor
+            
+            Console.WriteLine("1. Count Visitor");
+            var countVisitor = new CountVisitor();
+            countVisitor.CountElements(client.ObjectStructure);
+            Console.WriteLine("Number of elements is: {0}", countVisitor.Count);
+            Console.WriteLine();
+
+            #endregion
+
+            #region Display Names Visitor
+
+            Console.WriteLine("2. Display Names Visitor");
+            var displayNameVisitor = new DisplayNameVisitor();
+            displayNameVisitor.DisplayElementsNames(client.ObjectStructure);
+            Console.WriteLine("Elements are: {0}", displayNameVisitor.Output);
+            Console.WriteLine();
+
+            #endregion
 
             Console.ReadLine();
         }

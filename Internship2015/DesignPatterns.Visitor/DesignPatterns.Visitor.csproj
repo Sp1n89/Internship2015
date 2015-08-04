@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Client.cs" />
     <Compile Include="CountVisitor.cs" />
+    <Compile Include="DisplayNameVisitor.cs" />
     <Compile Include="Element.cs" />
     <Compile Include="ElementWithLink.cs" />
     <Compile Include="IElement.cs" />

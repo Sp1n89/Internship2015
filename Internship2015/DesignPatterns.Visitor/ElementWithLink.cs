@@ -2,10 +2,9 @@
 {
     public class ElementWithLink : Element
     {
-        public ElementWithLink(Element link, Element next)
+        public ElementWithLink(string name, Element link, Element next) : base(name, next)
         {
             Link = link;
-            Next = next;
         }
 
         public override void Accept(IVisitor visitor)
