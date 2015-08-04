@@ -15,7 +15,8 @@ namespace FrameworkFundamentals.GarbageCollection
             var bytesCount = Encoding.ASCII.GetByteCount(str);
 
             fs.Write(bytes, 0, bytesCount);
-            fs.Dispose();
+            // fs.Dispose();
+            fs.Flush();
 
             Console.ReadLine();
         }

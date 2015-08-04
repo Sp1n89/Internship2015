@@ -1,6 +1,6 @@
 ﻿namespace DesignPatterns.Visitor
 {
-    public class Element : IElement
+    public class Element : ElementBase
     {
         public Element Next { get; set; }
         public Element Link { get; set; }

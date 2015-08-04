@@ -1,6 +1,6 @@
 ﻿namespace DesignPatterns.Visitor
 {
-    public abstract class IElement
+    public abstract class ElementBase
     {
        public abstract void Accept(IVisitor visitor);
     }

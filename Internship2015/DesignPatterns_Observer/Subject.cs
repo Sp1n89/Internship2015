@@ -24,19 +24,25 @@ namespace DesignPatterns.Observer
 
         public void Attach(IObserver observer)
         {
-            _observers.Add(observer);
+            if (!_observers.Contains(observer))
+            {
+                _observers.Add(observer);
+            }
         }
 
         public void Detach(IObserver observer)
         {
-            _observers.Remove(observer);
+            if (_observers.Contains(observer))
+            {
+                _observers.Remove(observer);
+            }
         }
 
         private void Notify()
         {
             foreach (var observer in _observers)
             {
-                observer.Update("Updated");
+                observer.Update(State);
             }
         }
     }
