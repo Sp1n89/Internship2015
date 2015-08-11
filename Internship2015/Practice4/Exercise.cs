@@ -16,9 +16,9 @@ namespace Practice4
 
             IA<A2> i2 = null;
 
-            IA<A3> i3 = null;
-
-            IA<A4> i4 = null;
+//            IA<A3> i3 = null;
+//
+//            IA<A4> i4 = null;
 
         }
 
