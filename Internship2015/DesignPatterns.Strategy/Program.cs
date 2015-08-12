@@ -11,7 +11,7 @@ namespace DesignPatterns.Strategy
             sortedList.Add("Tommy Toe");
             sortedList.Add("John Smith");
 
-            sortedList.SetSortStrategy(new BubbleSort());
+            sortedList.SetSortStrategy(new QuickSort());
             sortedList.Sort();
 
             Console.WriteLine(sortedList);

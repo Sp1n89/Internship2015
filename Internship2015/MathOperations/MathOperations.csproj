@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7CD1081D-4A67-4757-906D-53E7894FB3BF}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{23E77F6C-E7E7-4C65-BC8E-6AF28105373D}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DesignPatterns.Visitor</RootNamespace>
-    <AssemblyName>DesignPatterns.Visitor</AssemblyName>
+    <RootNamespace>MathOperations</RootNamespace>
+    <AssemblyName>MathOperations</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,23 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Client.cs" />
-    <Compile Include="CountVisitor.cs" />
-    <Compile Include="DisplayNameVisitor.cs" />
-    <Compile Include="Element.cs" />
-    <Compile Include="ElementWithLink.cs" />
-    <Compile Include="Example3\Book.cs" />
-    <Compile Include="Example3\Fruit.cs" />
-    <Compile Include="Example3\IItem.cs" />
-    <Compile Include="Example3\IVisitor.cs" />
-    <Compile Include="Example3\PriceCalculatorVisitor.cs" />
-    <Compile Include="IElement.cs" />
-    <Compile Include="IVisitor.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Mathematics.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -41,6 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Example2\ChannelAdmin.cs" />
+    <Compile Include="Example2\Client.cs" />
+    <Compile Include="Example2\ISubscriber.cs" />
+    <Compile Include="Example2\YouTubeChannel.cs" />
     <Compile Include="IObserver.cs" />
     <Compile Include="Observer.cs" />
     <Compile Include="Program.cs" />
