@@ -27,7 +27,7 @@ namespace QueryOverExample.Domain.Model
 
         public override string ToString()
         {
-            return string.Format("Name: {0} {1}, Telephone: {2}, Address: {3}", Firstname, Lastname, TelephoneNumber,
+            return string.Format("{0, -15} {1, -15} {2, -15} {3, -15}", Firstname, Lastname, TelephoneNumber,
                 Address);
         }
     }

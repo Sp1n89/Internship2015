@@ -13,5 +13,8 @@ namespace QueryOverExample.Repository.Interface
         IList<OrderDetailsRow> GetAllOrderDetailsRows();
         IList<OrderDetailsRow> GetAllClientOrderDetailsRows_1();
         IList<OrderDetailsRow> GetAllClientOrderDetailsRows_2();
+
+        IList<ClientWithOrdersCountsRow> GetClientsWithOrdersCountsRows();
+        IList<ClientWithOrdersCountsRow> GetClientRowsHavingMoreThanOneOrder();
     }
 }

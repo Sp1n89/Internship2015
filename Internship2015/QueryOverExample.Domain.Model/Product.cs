@@ -7,14 +7,14 @@
             
         }
 
-        public Product(string name, ProductCategory productCategory)
+        public Product(string name, string category)
         {
             Name = name;
-            ProductCategory = productCategory;
+            Category = category;
         }
 
         public virtual string Name { get; set; }
 
-        public virtual ProductCategory ProductCategory { get; set; }
+        public virtual string Category { get; set; }
     }
 }

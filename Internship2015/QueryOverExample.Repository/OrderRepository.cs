@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
 using NHibernate;
+using NHibernate.Criterion;
 using NHibernate.SqlCommand;
 using NHibernate.Transform;
 using QueryOverExample.Domain.Model;
 using QueryOverExample.Domain.Model.Rows;
 using QueryOverExample.Repository.Interface;
+using Order = QueryOverExample.Domain.Model.Order;
 
 namespace QueryOverExample.Repository
 {
@@ -71,7 +73,7 @@ namespace QueryOverExample.Repository
                     .Select(() => client.Lastname).WithAlias(() => row.Lastname)
                     .Select(() => client.TelephoneNumber).WithAlias(() => row.TelephoneNumber)
                     .Select(() => product.Name).WithAlias(() => row.Product)
-                    .Select(() => product.ProductCategory).WithAlias(() => row.ProductCategory))
+                    .Select(() => product.Category).WithAlias(() => row.Category))
                 .TransformUsing(Transformers.AliasToBean<OrderDetailsRow>())
                 .List<OrderDetailsRow>();
         }
@@ -95,7 +97,7 @@ namespace QueryOverExample.Repository
                     .Select(() => client.Lastname).WithAlias(() => row.Lastname)
                     .Select(() => client.TelephoneNumber).WithAlias(() => row.TelephoneNumber)
                     .Select(() => product.Name).WithAlias(() => row.Product)
-                    .Select(() => product.ProductCategory).WithAlias(() => row.ProductCategory))
+                    .Select(() => product.Category).WithAlias(() => row.Category))
                 .TransformUsing(Transformers.AliasToBean<OrderDetailsRow>())
                 .List<OrderDetailsRow>();
         }
@@ -119,9 +121,46 @@ namespace QueryOverExample.Repository
                     .Select(() => client.Lastname).WithAlias(() => row.Lastname)
                     .Select(() => client.TelephoneNumber).WithAlias(() => row.TelephoneNumber)
                     .Select(() => product.Name).WithAlias(() => row.Product)
-                    .Select(() => product.ProductCategory).WithAlias(() => row.ProductCategory))
+                    .Select(() => product.Category).WithAlias(() => row.Category))
                 .TransformUsing(Transformers.AliasToBean<OrderDetailsRow>())
                 .List<OrderDetailsRow>();
+        }
+
+        public IList<ClientWithOrdersCountsRow> GetClientsWithOrdersCountsRows()
+        {
+            Order order = null;
+            Client client = null;
+
+            ClientWithOrdersCountsRow row = null;
+
+            return _session.QueryOver(() => client)
+                .JoinAlias(() => client.Orders, () => order)
+                .SelectList(list => list
+                    .SelectGroup(() => client.Id).WithAlias(() => row.ClientId)
+                    .SelectGroup(() => client.Firstname).WithAlias(() => row.Firstname)
+                    .SelectGroup(() => client.Lastname).WithAlias(() => row.Lastname)
+                    .SelectCount(() => order.Id).WithAlias(() => row.OrdersCount))
+                .TransformUsing(Transformers.AliasToBean<ClientWithOrdersCountsRow>())
+                .List<ClientWithOrdersCountsRow>();
+        }
+
+        public IList<ClientWithOrdersCountsRow> GetClientRowsHavingMoreThanOneOrder()
+        {
+            Order order = null;
+            Client client = null;
+
+            ClientWithOrdersCountsRow row = null;
+
+            return _session.QueryOver(() => client)
+                .JoinAlias(() => client.Orders, () => order)
+                .SelectList(list => list
+                    .SelectGroup(() => client.Id).WithAlias(() => row.ClientId)
+                    .SelectGroup(() => client.Firstname).WithAlias(() => row.Firstname)
+                    .SelectGroup(() => client.Lastname).WithAlias(() => row.Lastname)
+                    .SelectCount(() => order.Id).WithAlias(() => row.OrdersCount))
+                .Where(Restrictions.Gt(Projections.Count(Projections.Property(() => order.Id)), 1))
+                .TransformUsing(Transformers.AliasToBean<ClientWithOrdersCountsRow>())
+                .List<ClientWithOrdersCountsRow>();
         }
     }
 }

@@ -10,7 +10,7 @@ namespace QueryOverExample.Domain.Model.Mapping
             Id(x => x.Id).Column("ProductID").GeneratedBy.Identity();
 
             Map(x => x.Name).Not.Nullable();
-            Map(x => x.ProductCategory).Not.Nullable().CustomType<int>();
+            Map(x => x.Category).Not.Nullable();
         }
     }
 }

@@ -42,10 +42,10 @@
     <Compile Include="Client.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="OrderItem.cs" />
-    <Compile Include="ProductCategory.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="EntityBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rows\ClientWithOrdersCountsRow.cs" />
     <Compile Include="Rows\OrderDetailsRow.cs" />
     <Compile Include="Shop.cs" />
     <Compile Include="ShopProduct.cs" />

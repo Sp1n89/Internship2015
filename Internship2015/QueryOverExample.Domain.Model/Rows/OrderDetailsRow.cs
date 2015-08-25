@@ -12,6 +12,12 @@
 
         public string Product { get; set; }
 
-        public ProductCategory? ProductCategory { get; set; }
+        public string Category { get; set; }
+
+        public override string ToString()
+        {
+            return string.Format("{0, -20} {1, -20} {2, -20} {3, -20} {4, -50} {5, -20}",
+                OrderNumber, Firstname, Lastname, TelephoneNumber, Product, Category);
+        }
     }
 }
