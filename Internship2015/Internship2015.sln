@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns.Observer", "DesignPatterns_Observer\DesignPatterns.Observer.csproj", "{BE22363F-AB55-45C2-9944-D1B958AE8042}"
 EndProject
@@ -56,6 +56,13 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueryOverExample.Infrastructure", "QueryOverExample.Infrastructure\QueryOverExample.Infrastructure.csproj", "{90AC09E7-4BF3-47DD-922D-31D0952EA151}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueryOverExample.Tests", "QueryOverExample.Tests\QueryOverExample.Tests.csproj", "{0B79AB33-1CEB-4376-9AE2-32A5E36272E7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{CC0DA741-844D-4DC0-B030-17FD6A18BA53}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

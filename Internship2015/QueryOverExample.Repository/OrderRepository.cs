@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using NHibernate;
+using NHibernate.SqlCommand;
 using NHibernate.Transform;
 using QueryOverExample.Domain.Model;
 using QueryOverExample.Domain.Model.Rows;
@@ -62,6 +63,54 @@ namespace QueryOverExample.Repository
 
             return _session.QueryOver(() => order)
                 .JoinAlias(() => order.Client, () => client)
+                .JoinAlias(() => order.Items, () => orderItem)
+                .JoinAlias(() => orderItem.Product, () => product)
+                .SelectList(list => list
+                    .Select(() => order.Number).WithAlias(() => row.OrderNumber)
+                    .Select(() => client.Firstname).WithAlias(() => row.Firstname)
+                    .Select(() => client.Lastname).WithAlias(() => row.Lastname)
+                    .Select(() => client.TelephoneNumber).WithAlias(() => row.TelephoneNumber)
+                    .Select(() => product.Name).WithAlias(() => row.Product)
+                    .Select(() => product.ProductCategory).WithAlias(() => row.ProductCategory))
+                .TransformUsing(Transformers.AliasToBean<OrderDetailsRow>())
+                .List<OrderDetailsRow>();
+        }
+
+        public IList<OrderDetailsRow> GetAllClientOrderDetailsRows_1()
+        {
+            Order order = null;
+            OrderItem orderItem = null;
+            Product product = null;
+            Client client = null;
+
+            OrderDetailsRow row = null;
+
+            return _session.QueryOver(() => order)
+                .Left.JoinAlias(() => order.Client, () => client)
+                .JoinAlias(() => order.Items, () => orderItem)
+                .JoinAlias(() => orderItem.Product, () => product)
+                .SelectList(list => list
+                    .Select(() => order.Number).WithAlias(() => row.OrderNumber)
+                    .Select(() => client.Firstname).WithAlias(() => row.Firstname)
+                    .Select(() => client.Lastname).WithAlias(() => row.Lastname)
+                    .Select(() => client.TelephoneNumber).WithAlias(() => row.TelephoneNumber)
+                    .Select(() => product.Name).WithAlias(() => row.Product)
+                    .Select(() => product.ProductCategory).WithAlias(() => row.ProductCategory))
+                .TransformUsing(Transformers.AliasToBean<OrderDetailsRow>())
+                .List<OrderDetailsRow>();
+        }
+
+        public IList<OrderDetailsRow> GetAllClientOrderDetailsRows_2()
+        {
+            Order order = null;
+            OrderItem orderItem = null;
+            Product product = null;
+            Client client = null;
+
+            OrderDetailsRow row = null;
+
+            return _session.QueryOver(() => order)
+                .JoinAlias(() => order.Client, () => client, JoinType.LeftOuterJoin)
                 .JoinAlias(() => order.Items, () => orderItem)
                 .JoinAlias(() => orderItem.Product, () => product)
                 .SelectList(list => list
