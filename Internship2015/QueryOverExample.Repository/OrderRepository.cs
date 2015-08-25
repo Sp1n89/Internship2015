@@ -85,10 +85,10 @@ namespace QueryOverExample.Repository
 
             OrderDetailsRow row = null;
 
-            return _session.QueryOver(() => order)
-                .Left.JoinAlias(() => order.Client, () => client)
-                .JoinAlias(() => order.Items, () => orderItem)
-                .JoinAlias(() => orderItem.Product, () => product)
+            return _session.QueryOver(() => client)
+                .Left.JoinAlias(() => client.Orders, () => order)
+                .Left.JoinAlias(() => order.Items, () => orderItem)
+                .Left.JoinAlias(() => orderItem.Product, () => product)
                 .SelectList(list => list
                     .Select(() => order.Number).WithAlias(() => row.OrderNumber)
                     .Select(() => client.Firstname).WithAlias(() => row.Firstname)
@@ -109,10 +109,10 @@ namespace QueryOverExample.Repository
 
             OrderDetailsRow row = null;
 
-            return _session.QueryOver(() => order)
-                .JoinAlias(() => order.Client, () => client, JoinType.LeftOuterJoin)
-                .JoinAlias(() => order.Items, () => orderItem)
-                .JoinAlias(() => orderItem.Product, () => product)
+            return _session.QueryOver(() => client)
+                .JoinAlias(() => client.Orders, () => order, JoinType.LeftOuterJoin)
+                .JoinAlias(() => order.Items, () => orderItem, JoinType.LeftOuterJoin)
+                .JoinAlias(() => orderItem.Product, () => product, JoinType.LeftOuterJoin)
                 .SelectList(list => list
                     .Select(() => order.Number).WithAlias(() => row.OrderNumber)
                     .Select(() => client.Firstname).WithAlias(() => row.Firstname)

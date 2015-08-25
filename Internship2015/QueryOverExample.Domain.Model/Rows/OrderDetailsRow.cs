@@ -12,6 +12,6 @@
 
         public string Product { get; set; }
 
-        public ProductCategory ProductCategory { get; set; }
+        public ProductCategory? ProductCategory { get; set; }
     }
 }

@@ -21,7 +21,7 @@ namespace QueryOverExample.Infrastructure
             Container.RegisterType<IClientRepository, ClientRepository>();
             Container.RegisterType<IOrderRepository, OrderRepository>();
             Container.RegisterType<IShopRepository, ShopRepository>();
-            Container.RegisterInstance(Repository.NHibernateProvider.GetSession());
+            Container.RegisterInstance(NHibernateProvider.GetSession());
         }
 
         public static T Resolve<T>()

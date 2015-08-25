@@ -4,7 +4,7 @@ using QueryOverExample.Repository.Interface;
 
 namespace QueryOverExample.Presentation
 {
-    class Program
+    public class Program
     {
         private static readonly IClientRepository ClientRepository;
         private static readonly IOrderRepository OrderRepository;
@@ -56,6 +56,11 @@ namespace QueryOverExample.Presentation
 
             // AliasToBean Transformer
             // ShowAllOrderDetails();
+
+            // Left Join
+            // var clients1 = OrderRepository.GetAllClientOrderDetailsRows_1();
+            // var clients2 = OrderRepository.GetAllClientOrderDetailsRows_2();
+
 
             Console.ReadLine();
         }
@@ -164,5 +169,6 @@ namespace QueryOverExample.Presentation
                     row.TelephoneNumber, row.Product, row.ProductCategory);
             }
         }
+
     }
 }

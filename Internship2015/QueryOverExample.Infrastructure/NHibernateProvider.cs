@@ -8,16 +8,7 @@ namespace QueryOverExample.Infrastructure
 {
     public static class NHibernateProvider
     {
-        private const string ConnectionStringName = "HomeConnectionString";
-//        private const string ConnectionStringName = "WorkConnectionString";
-
-        static NHibernateProvider()
-        {
-            if (_sessionFactory == null)
-            {
-                _sessionFactory = CreateSessionFactory();
-            }
-        }
+        private const string ConnectionStringName = "DefaultConnectionString";
 
         private static ISessionFactory _sessionFactory;
 
