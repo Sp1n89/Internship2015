@@ -65,7 +65,7 @@ namespace QueryOverExample.Presentation
             //ShowClientsWithOrdersCountsRows();
 
             //// Select GroupBy and Having
-            //ShowClientRowsHavingMoreThanOneOrder();
+            ShowClientRowsHavingMoreThanOneOrder();
 
             Console.ReadLine();
         }
